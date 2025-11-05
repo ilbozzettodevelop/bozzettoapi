@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 // Importa las rutas base (donde definiremos las APIs)
-const baseRoutes = require('./routes/base.routes'); 
+const baseRoutes = require('./rutas/base.routes'); 
 
 // Crea la instancia de la aplicación Express
 const app = express();
@@ -20,7 +20,7 @@ const setupGlobalMiddleware = () => {
     // pueda enviar solicitudes a esta API (localhost:3000).
     app.use(cors({
         // IMPORTANTE: '*' permite cualquier origen (fácil para desarrollo)
-        // Reemplaza con tu dominio de producción para más seguridad (ej: 'https://www.bozzetto.com')
+        // Reemplaza con tu dominio de producción para más seguridad
         origin: '*', 
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
